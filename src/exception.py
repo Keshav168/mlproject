@@ -1,0 +1,30 @@
+import sys
+from src.logger import logging
+
+
+def error_message_detail(error,error_detail:sys):
+    _,_,exc_tb=error_detail.exc_info()
+    file_name=exc_tb.tb_frame.f_code.co_filename
+    error_message="Error occured in python script name [{0}] line number [{1}] error message[{2}]".format(
+     file_name,exc_tb.tb_lineno,str(error))
+
+    return error_message
+
+    
+
+class CustomException(Exception):
+    def __init__(self,error_message,error_detail:sys):
+        super().__init__(error_message)
+        self.error_message=error_message_detail(error_message,error_detail=error_detail)
+    
+    def __str__(self):
+        return self.error_message
+    
+
+    
+# This code defines a custom exception handling mechanism that captures detailed error information during
+# runtime. It uses the sys module to extract the exception type, traceback, file name, and line number where
+# the error occurred. The error_message_detail() function formats this information into a readable message, while
+# the CustomException class inherits from Python’s built-in Exception to create a user-defined error type. When an 
+# error is raised using CustomException, it automatically logs and returns a descriptive message containing the script name,
+# line number, and exact error details — making debugging and error tracking easier in complex ML projects.
