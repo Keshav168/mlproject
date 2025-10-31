@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam Performance Indicator</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #74ABE2, #5563DE);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        nav {
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        nav h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        /* Hero Section */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            line-height: 1.6;
+            color: #f1f1f1;
+        }
+
+        .cta-btn {
+            background: #fff;
+            color: #5563DE;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            margin-top: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #5563DE;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 20px;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        .feature {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 280px;
+            margin: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature h3 {
+            color: #5563DE;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <h2>🎓 Student Performance App</h2>
+        <div>
+            <a href="">Home</a>
+            <a href="{{ url_for('predict_datapoint') }}">Predict</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Student Exam Performance Indicator</h1>
+        <p>Predict student exam performance based on demographic and academic inputs using our intelligent machine learning model. 
+           Get actionable insights to improve student outcomes and support educational growth.</p>
+        <a href="{{ url_for('predict_datapoint') }}" class="cta-btn">🎯 Predict Now</a>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="feature">
+            <h3>📊 Accurate Predictions</h3>
+            <p>Uses advanced ML algorithms trained on real data to predict student scores with precision.</p>
+        </div>
+        <div class="feature">
+            <h3>⚡ Fast & Reliable</h3>
+            <p>Instant predictions after form submission with a smooth and intuitive interface.</p>
+        </div>
+        <div class="feature">
+            <h3>📚 Actionable Insights</h3>
+            <p>Understand performance factors and help students enhance their academic journey.</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 Student Performance Predictor | Built with ❤️ using Flask & Machine Learning
+    </footer>
+</body>
+</html>
